@@ -1,81 +1,107 @@
-✅ README.md – Full Example
+📄 README.md
 markdown
 Copy
 Edit
-# MyProject
+# 🎬 YouTube Video & Audio Downloader (GUI with yt-dlp + Tkinter)
 
-MyProject is a sample backend project built using Python and Git, aimed at showcasing how to create and manage a GitHub repository entirely via the command line (CMD). This project demonstrates initializing a Git repository, creating a GitHub repo using the GitHub API, linking remote origin, and pushing commits.
-
----
-
-## 📁 Features
-
-- Command-line based GitHub repo creation
-- Initial commit with README setup
-- Full git setup: init, add, commit, push
-- Remote linking with GitHub using personal access tokens (PAT)
+A simple yet powerful GUI tool to download YouTube videos or audio files using [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) and Python's built-in `tkinter` library.
 
 ---
 
-## 🛠️ Technologies Used
+## 🧰 Features
 
-- **Git** – Version control system
-- **GitHub** – Repository hosting
-- **Command Line (CMD)** – All operations done via terminal
-- *(Optional)* Python, Flask, Django, or any backend tech (you can add later)
+✅ Paste YouTube URL directly  
+✅ Choose download destination folder  
+✅ Select video resolution (720p, 480p, 360p, Best)  
+✅ Download audio-only in MP3 format  
+✅ User-friendly GUI  
+✅ Uses `yt-dlp` — actively maintained and robust
 
 ---
 
-## 🚀 How to Use
+## 🖥️ Demo
 
-### Clone the Repository
+![screenshot](screenshot.png) *(Add screenshot if available)*
+
+---
+
+## 📦 Requirements
+
+- Python 3.7+
+- `yt-dlp`
+- `ffmpeg` (for audio conversion or merging video + audio)
+- `tkinter` (comes preinstalled with most Python distributions)
+
+### 🔧 Install Dependencies
 
 ```bash
-git clone https://github.com/Swagatam-lab/MyProject.git
-cd MyProject
-💻 CMD Workflow (Used in This Project)
+pip install yt-dlp
+🛠 Install FFmpeg
+Windows
+
+Download from: https://ffmpeg.org/download.html
+
+Extract it and add the bin folder path to your system's PATH variable.
+
+Linux (Debian/Ubuntu)
+
 bash
 Copy
 Edit
-# Step 1: Create folder and init
-mkdir MyProject
-cd MyProject
-git init
+sudo apt install ffmpeg
+macOS (Homebrew)
 
-# Step 2: Add files
-echo "# MyProject" > README.md
-git add .
-git commit -m "Initial commit"
-
-# Step 3: Create GitHub repo (via API)
-curl -u "Swagatam-lab" https://api.github.com/user/repos -d "{\"name\":\"MyProject\"}"
-
-# Step 4: Link remote and push
-git remote add origin https://Swagatam-lab:<your_token>@github.com/Swagatam-lab/MyProject.git
-git branch -M main
-git push -u origin main
-🔐 Security Tips
-Do not expose your personal access token (PAT) publicly.
-
-Always store credentials securely.
-
-Use .gitignore to avoid pushing sensitive files.
-
-📄 License
-This project is open-source and available under the MIT License.
-
-🙋‍♂️ Author
-Swagatam
-GitHub: Swagatam-lab
-
-yaml
+bash
 Copy
 Edit
+brew install ffmpeg
+🚀 How to Run
+bash
+Copy
+Edit
+python yt_gui_downloader.py
+📝 How It Works
+Enter a valid YouTube video URL.
 
----
+Click “Choose Download Folder” to select where the file will be saved.
 
-Let me know:
-- What tech stack this project actually uses (e.g., Django, Flask, FastAPI)?
-- Do you want me to include screenshots, API instructions, or usage examples?
+Choose the desired quality:
 
-I can update the README accordingly.
+Best: Best available resolution
+
+720p, 480p, 360p: Specific resolutions
+
+Audio Only: Extracts audio as MP3
+
+Click “Download” — the video/audio will be downloaded and saved.
+
+📂 Project Structure
+graphql
+Copy
+Edit
+yt_gui_downloader.py   # Main Python GUI script
+README.md              # This file
+screenshot.png         # (Optional) GUI screenshot
+🚧 Known Limitations
+No progress bar yet
+
+No playlist support (but easily addable)
+
+Doesn't auto-detect available resolutions (uses preset options)
+
+💡 Future Ideas
+Add progress bar
+
+Support YouTube playlists
+
+Add thumbnail preview
+
+Resolution auto-detection dropdown
+
+🙌 Credits
+yt-dlp — the best YouTube downloader backend
+
+Python's tkinter — for the simple GUI
+
+📜 License
+This project is free to use and modify. No warranties.
